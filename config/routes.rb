@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :gossips, only: [:index, :show]
   
-  
+
   # Defines the root path route ("/")
   # root "articles#index"
   root "gossips#index"

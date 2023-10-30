@@ -13,5 +13,6 @@ class GossipsController < ApplicationController
     @top_geeks = Geek.order(:rank).limit(5)
     @potins = Potin.top_geeks_method
   end
+  
 
 end
