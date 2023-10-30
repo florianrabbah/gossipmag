@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Geeks Célèbres</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <h1 class="mb-4">Geeks Célèbres</h1>
+  
+    <div class="row">
+      <div class="col-lg-6">
+        <h2 class="mb-3">5 Geeks Célèbres</h2>
+        <ol>
+          <li>
+            <h3><a href="https://en.wikipedia.org/wiki/Ada_Lovelace" target="_blank">Ada Lovelace</a></h3>
+            <p>Ada Lovelace était une mathématicienne anglaise surtout connue pour son travail sur la machine analytique de Charles Babbage. Elle est considérée comme la première programmeuse de l'histoire.</p>
+          </li>
+          <li>
+            <h3><a href="https://en.wikipedia.org/wiki/Alan_Turing" target="_blank">Alan Turing</a></h3>
+            <p>Alan Turing était un mathématicien, logicien et cryptanalyste britannique. Il est souvent appelé le père de l'informatique en raison de son rôle dans le développement de l'ordinateur.</p>
+          </li>
+          <li>
+            <h3><a href="https://en.wikipedia.org/wiki/Grace_Hopper" target="_blank">Grace Hopper</a></h3>
+            <p>Grace Hopper était une informaticienne américaine et officier de marine. Elle a contribué au développement du premier compilateur pour un langage de programmation et a popularisé l'idée des langages de programmation compréhensibles par les humains.</p>
+          </li>
+          <li>
+            <h3><a href="https://en.wikipedia.org/wiki/Linus_Torvalds" target="_blank">Linus Torvalds</a></h3>
+            <p>Linus Torvalds est un ingénieur en logiciel finlandais-américain, surtout connu comme le créateur du noyau Linux, le cœur du système d'exploitation Linux.</p>
+          </li>
+          <li>
+            <h3><a href="https://en.wikipedia.org/wiki/Elon_Musk" target="_blank">Elon Musk</a></h3>
+            <p>Elon Musk est un entrepreneur et ingénieur américain, cofondateur de PayPal, Tesla, SpaceX et d'autres entreprises. Il est célèbre pour ses innovations technologiques dans l'espace et l'automobile.</p>
+          </li>
+        </ol>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img src="../../assets/elon_musk.jpg" alt="Elon Musk" class="img-fluid mt-4">
+      </div>
+    </div>
+  </div>
+  
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; <%= Time.now.year %> Geeks Célèbres. Tous droits réservés.</p>
+    <%= link_to "Retour à la liste des potins", gossips_path, class: "text-white" %>
+  </footer>
+</body>
+</html>

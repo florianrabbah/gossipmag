@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <title>Site de Potins</title>
+  <style>
+    body {
+      padding-top: 60px; 
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="<%= root_path %>">Site de Potins</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <h4><%= link_to 'Accueil', root_path, class: 'nav-link' %></h4>
+          </li>
+          <li class="nav-item">
+            <h4><%= link_to 'Potins', gossips_path, class: 'nav-link' %></h4>
+          </li>
+          <li class="nav-item">
+            <h4><%= link_to 'À Propos', about_path, class: 'nav-link' %></h4>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <header class="text-center mb-5">
+      <h1>Bienvenue sur le Site de Potins</h1>
+      <p class="lead">Découvrez les derniers potins sur le monde geek et les jeux vidéo.</p>
+    </header>
+
+    <main>
+      <section>
+      <h2><%= link_to 'TOP 10 Jeux Vidéo Spécial Geek', 'https://www.youtube.com/watch?v=D56aG9oJUO8', class: 'text-decoration-none' %></h2>
+
+        <ul class="list-group">
+          <% @gossips.each do |gossip| %>
+            <li class="list-group-item"><%= "#{gossip.content} - #{gossip.author.name}" %></li>
+          <% end %>
+        </ul>
+      </section>
+
+      <aside class="mt-5">
+        <h2>À la Une</h2>
+        <ul class="list-group">
+        <h4><li class="list-group-item"><%= link_to 'Un geek peut-il tomber amoureux ?', 'https://www.youtube.com/watch?v=pUtpy2EWWuY' %></li></h4>
+        <h4><li class="list-group-item"><%= link_to 'Quand tu es un vrai *OG* : cuisine faite maison ou uberseats ?', 'https://www.youtube.com/watch?v=y47W2QhGJeI&t=4s' %></li></h4>
+         <h4> <li class="list-group-item"><%= link_to 'Top 5 des geeks célèbres', top_geeks_path %></li></h4>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <footer >
+    <div class="container text-center">
+      <p>&copy; <%= Time.now.year %> Site de Potins. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-JO6XthkQHpXVW6n6vCkTtZ6KTU8hS390J6ZLkO8w3txkRS0VzA02+rTjR5pZ6K6L" crossorigin="anonymous"></script>
+</body>
+</html>
