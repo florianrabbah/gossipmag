@@ -63,6 +63,23 @@
             </div>
         </div>
 
+        <section class="mt-5">
+    <h1 class="text-center mb-4">Toi aussi, as-tu des nouvelles à partager ? Fais tourner !!!</h1>
+    <form class="row g-3" action="<%= gossips_path %>" method="post">
+        <div class="col-md-6">
+            <label for="writer_name" class="form-label">Nom du créateur</label>
+            <input type="text" class="form-control" id="writer_name" name="writer_name" required>
+        </div>
+        <div class="col-md-6">
+            <label for="content_text" class="form-label">Contenu</label>
+            <textarea class="form-control" id="content_text" name="content_text" rows="5" required></textarea>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Partager ton potin !</button>
+        </div>
+    </form>
+</section>
+
         <footer class="mt-5">
             <h2 class="mb-3">Contactez-nous</h2>
             <ul>
@@ -72,4 +89,8 @@
                 <li><a href="mailto:christine@exemple.com">christine@exemple.com</a></li>
                 <li><a href="mailto:robin@exemple.com">robin@exemple.com</a></li>
             </ul>
-        </
+        </footer>
+        
+</div>
+</body>
+</html>
