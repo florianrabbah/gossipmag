@@ -1,0 +1,12 @@
+<h1>Les Gossips Partagés :</h1>
+<ul>
+  <% @gossips.each do |gossip| %>
+    <li>
+      <strong><%= gossip.user.name %></strong>:
+      <br>
+      <strong>Title:</strong> <%= gossip.title %>
+      <br>
+      <strong>Content:</strong> <%= gossip.content %>
+    </li>
+  <% end %>
+</ul>

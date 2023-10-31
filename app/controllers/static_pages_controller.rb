@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
   def contact
   end
   def top_geeks
-    @potins = Potin.top_geeks_method 
+    @potins = Gossip.all
 
   end
 end

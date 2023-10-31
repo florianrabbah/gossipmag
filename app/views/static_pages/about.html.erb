@@ -64,21 +64,32 @@
         </div>
 
         <section class="mt-5">
-    <h1 class="text-center mb-4">Toi aussi, as-tu des nouvelles à partager ? Fais tourner !!!</h1>
-    <form class="row g-3" action="<%= gossips_path %>" method="post">
-        <div class="col-md-6">
-            <label for="writer_name" class="form-label">Nom du créateur</label>
-            <input type="text" class="form-control" id="writer_name" name="writer_name" required>
-        </div>
-        <div class="col-md-6">
-            <label for="content_text" class="form-label">Contenu</label>
-            <textarea class="form-control" id="content_text" name="content_text" rows="5" required></textarea>
-        </div>
-        <div class="col-12">
-            <button type="submit" class="btn btn-primary">Partager ton potin !</button>
-        </div>
-    </form>
-</section>
+        <h1 class="text-center mb-4">tu souhaites rejoindre notre equipe ?</h1>
+        <form class="row g-3" action="<%= gossips_path %>" method="post">
+            <div class="col-md-6 mx-auto">
+                <label for="inputName" class="form-label">Nom complet</label>
+                <input type="text" class="form-control" id="inputName" name="writer_name" required>
+            </div>
+            <div class="col-md-6 mx-auto">
+                <label for="inputEmail" class="form-label">Adresse email</label>
+                <input type="email" class="form-control" id="inputEmail" name="email" required>
+            </div>
+            <div class="col-md-6 mx-auto">
+                <label for="inputPassword" class="form-label">Mot de passe</label>
+                <input type="password" class="form-control" id="inputPassword" name="password" required>
+            </div>
+            <div class="col-md-6 mx-auto">
+                <label for="confirmPassword" class="form-label">Confirmer le mot de passe</label>
+                <input type="password" class="form-control" id="confirmPassword" name="password_confirmation" required>
+            </div>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary">Sinscrire</button>
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                </div>
+        </form>
+    
+        </section>
+    
 
         <footer class="mt-5">
             <h2 class="mb-3">Contactez-nous</h2>

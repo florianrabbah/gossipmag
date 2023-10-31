@@ -24,7 +24,8 @@
             <h4><%= link_to 'Accueil', root_path, class: 'nav-link' %></h4>
           </li>
           <li class="nav-item">
-            <h4><%= link_to 'Potins', gossips_path, class: 'nav-link'  %></h4>
+            <h4><%= link_to 'Le Club', new_club_path, class: 'nav-link' %>
+            </h4>
           </li>
           <li class="nav-item">
             <h4><%= link_to 'À Propos', about_path, class: 'nav-link' %>  </h4>  
@@ -44,11 +45,7 @@
       <section>
       <h2><%= link_to 'TOP 10 Jeux Vidéo Spécial Geek', 'https://www.youtube.com/watch?v=D56aG9oJUO8', class: 'text-decoration-none' %></h2>
 
-        <ul class="list-group">
-          <% @gossips.each do |gossip| %>
-            <li class="list-group-item"><%= "#{gossip.content} - #{gossip.author.name}" %></li>
-          <% end %>
-        </ul>
+        
       </section>
 
       <aside class="mt-5">
@@ -66,19 +63,21 @@
   <section class="add-gossip mt-5">
     <div class="container">
         <h2>Ajouter un Nouveau Gossip</h2>
-        <%= form_with(model: Gossip.new, url: gossips_path, local: true) do |form| %>
+        <%= form_with(model: Gossip.new, url: shared_gossips_path) do |form| %>
             <div class="mb-3">
-                <%= form.label :author, class: "form-label" %>
-                <%= form.text_field :author, class: "form-control", required: true %>
+                <%= form.label :title, class: "form-label" %>
+                <%= form.text_field :title, class: "form-control", required: true %>
             </div>
             <div class="mb-3">
                 <%= form.label :content, class: "form-label" %>
                 <%= form.text_area :content, class: "form-control", required: true %>
-            </div>
-            <%= form.submit "Ajouter", class: "btn btn-primary" %>
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                </div>
+               <%= form.submit "Ajouter", class: "btn btn-primary" %>
         <% end %>
           </div>
-</section>
+    </section>
+      <center> <a href="<%= shared_gossips_path %>" class="btn btn-primary btn-lg">Accédez à tous nos gossips</a></center>
   
   
   
