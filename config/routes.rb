@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+  post 'sessions/create'
+  get 'sessions/destroy'
  
   
   # Routes pour les ressources existantes (users, gossips, etc.)
   resources :users
   resources :gossips
   resources :articles
-
+  resources :sessions, only: [:new, :create, :destroy]
   # Routes pour club_memberships avec le chemin 'clubs'
   get '/clubs/new', to: 'club_memberships#new_club', as: 'new_club'
   get '/clubs', to: 'club_memberships#index', as: 'club_memberships'
@@ -16,13 +19,7 @@ Rails.application.routes.draw do
   get '/shared_gossips', to: 'gossips#shared_gossips'
   # Route pour la page d'accueil
   root "gossips#index"
-
-
-  
-
-  
-  
-  post '/shared_gossips', to: 'gossips#create'
+post '/shared_gossips', to: 'gossips#create'
   post '/clubs', to: 'club_memberships#create', as: 'create_club_membership'
 
   resources :club_memberships do
@@ -31,6 +28,12 @@ Rails.application.routes.draw do
 
       get '/index_club_memberships', to: 'club_memberships#index', as: 'index_club_memberships'
 
+    
+      
+    
+    
+    
+    
     end
   end
   
